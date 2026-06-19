@@ -173,17 +173,24 @@ async def get_config_entries(
     """
     return (
         CONF_ENTRY_UNOFFICIAL_PROVIDER,
-        ConfigEntry(key=CONF_USERNAME, type=ConfigEntryType.STRING, required=True),
+        ConfigEntry(
+            key=CONF_USERNAME,
+            type=ConfigEntryType.STRING,
+            required=True,
+            label="config_entries.username.label",
+        ),
         ConfigEntry(
             key=CONF_COOKIE,
             type=ConfigEntryType.SECURE_STRING,
             required=True,
+            label="config_entries.cookie.label",
         ),
         ConfigEntry(
             key=CONF_PO_TOKEN_SERVER_URL,
             type=ConfigEntryType.STRING,
             default_value=DEFAULT_PO_TOKEN_SERVER_URL,
             required=True,
+            label="config_entries.po_token_server_url.label",
         ),
     )
 
